@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lee's Portfolio</title>
+    
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <!-- ============== STICKY NAVIGATION ============== -->
+    <nav id="navbar">
+        <div class="logo">
+            <img src="./images/birdy.png" alt="Logo">
+        </div>
+        <div class="links">
+            <a href="#my-works" class="nav-link">My Works</a>
+            <a href="#how-i-think" class="nav-link">How I Think</a>
+            <a href="#find-me" class="nav-link">Find me</a>
+        </div>
+    </nav>
+
+    <!-- ============== INTRO SECTION ============== -->
+    <section class="intro" id="intro">
+        <div class="intro-container">
+            <div class="intro-text-wrapper">
+                <h1 class="intro-greeting">Hi, I'm Lee!</h1>
+                <div class="intro-main">
+                    <p>To help convey a product in a way that just... makes sense </p>
+                    <p>- That's my definition of art.</p>
+                </div>
+                <p class="intro-subtitle"><strong>I'm a CSIE student, and I like Frontend UI/UX Development :D</strong></p>
+            </div>
+            <div class="intro-illustration">
+                <img src="./images/birdy.png" alt="Bird illustration">
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== MY WORKS SECTION ============== -->
+    <section class="my-works" id="my-works">
+        <h2 class="section-title">My Works</h2>
+        <div class="projects-grid">
+            <!-- Skill Gap Analyzer -->
+            <div class="project-card" data-project="sga">
+                <div class="image-container">
+                    <img src="./images/sga 1.png" alt="Skill Gap Analyzer - 1" class="project-image active">
+                    <img src="./images/sga 2.png" alt="Skill Gap Analyzer - 2" class="project-image hidden">
+                    <img src="./images/sga 3.png" alt="Skill Gap Analyzer - 3" class="project-image hidden">
+                </div>
+                <div class="project-text">
+                    <div class="title">Helped students/job seekers to get to know their dream job&apos;s required skill set in a push of a button.</div>
+                    <div class="year">2026, Skill Gap Analyzer (In progress)</div>
+                </div>
+            </div>
+
+            <!-- FRPH -->
+            <div class="project-card" data-project="frph">
+                <div class="project-text">
+                    <div class="title">I designed their Hero section to welcome food donors in doing a good deed in a few clicks.</div>
+                    <div class="year">2025, Food Rescue PH</div>
+                </div>
+                <div class="image-container">
+                    <img src="./images/frph 1.png" alt="FRPH - 1" class="project-image active">
+                    <img src="./images/frph 2.png" alt="FRPH - 2" class="project-image hidden">
+                    <img src="./images/frph 3.png" alt="FRPH - 3" class="project-image hidden">
+                </div>
+            </div>
+
+            <!-- Aguaholic -->
+            <div class="project-card" data-project="aguaholic">
+                <div class="image-container">
+                    <img src="./images/aguaholic 1.png" alt="Aguaholic - 1" class="project-image active">
+                    <img src="./images/aguaholic 2.png" alt="Aguaholic - 2" class="project-image hidden">
+                    <img src="./images/aguaholic 3.png" alt="Aguaholic - 3" class="project-image hidden">
+                    <img src="./images/aguaholic 4.png" alt="Aguaholic - 4" class="project-image hidden">
+                </div>
+                <div class="project-text">
+                    <div class="title">A project I did to endorse a Water bottle product. Using HTML/CSS & JavaScript</div>
+                    <div class="year">2022, Aguaholic</div>
+                </div>
+            </div>
+
+            <!-- Moderna Hotel -->
+            <div class="project-card" data-project="moderna">
+                <div class="project-text">
+                    <div class="title">A project I did to imitate a Hotel Booking Website. Using C# Windows Forms</div>
+                    <div class="year">2022, Moderna Hotel</div>
+                </div>
+                <div class="image-container">
+                    <img src="./images/moderna 1.png" alt="Moderna Hotel - 1" class="project-image active">
+                    <img src="./images/moderna 2.png" alt="Moderna Hotel - 2" class="project-image hidden">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== HOW I THINK SECTION ============== -->
+
+    <section class="how-i-think" id="how-i-think">
+
+        <p class="description" id="start-description">My foundation as a Computer Science student allows me to blend rigorous technical planning with human-centric design. I look beyond the immediate feature to consider long-term scalability, edge cases, and user patterns.</p>
+        <div class="content">
+            <h2>When I do my work, I start by identifying the core of the problem:</h2>
+            <div class="step-divider" id="step-divider-1">
+                <p> <strong>Who</strong> am I helping?</p>
+                <div class="diagram-item">
+                    <img src="./images/punch combo meme 1.png" alt="Who diagram">
+                </div>
+            </div>
+                <div class="step-divider" id="step-divider-2">
+                    <p> <strong>What</strong> kinds of problems do they have?</p>
+                    <div class="diagram-item">
+                        <img src="./images/punch combo meme 2.png" alt="What diagram">
+                    </div>
+                </div>
+            <div class="step-divider" id="step-divider-3">
+                <p> <strong>Why</strong> it matters.</p>
+                <div class="diagram-item">
+                    <img src="./images/punch combo meme 3.png" alt="Why diagram">
+                </div>
+            </div>
+            <h2>To answer: </h2>
+            <div class="step-divider" id="step-divider-4">
+                <p> <strong>How</strong> to help them in the best way I can?</p>
+                <div class="diagram-item">
+                    <img src="./images/punch combo meme 4.png" alt="How diagram">
+                </div>
+            </div>
+        </div>
+        <p class="description" id="end-description">I balance this analytical mindset with a creative approach, ensuring that every interface I build not only functions reliably but also brings my clients' visions to life with clarity and aesthetic intent.</p>
+
+    </section>
+
+    <!-- ============== FIND ME SECTION ============== -->
+    <section class="find-me" id="find-me">
+        <div class="profile">
+            <div class="profile-pic-wrapper">
+            <img src="./images/me.jpg" class="default-pic" alt="Profilepic">
+            <img id="clicktofindout" src="./images/me-2.jpg" class="easter-pic" alt="Easter-egg">
+            </div>
+        </div>
+        <div class="info">
+            <h2>If you're interested, find me here:</h2>
+            <div class="contact">
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="./images/gmail-icon.svg" alt="Gmail icon" class="gmail-icon">
+                    </div>
+                    <p>lee.nicdao.827@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="./images/github-icon.svg" alt="GitHub icon" class="github-icon">
+                    </div>
+                    <a href="https://github.com/Leebililee" target="_blank">github.com/Leebililee</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
