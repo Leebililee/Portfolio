@@ -1,0 +1,475 @@
+@font-face {
+    font-family: 'Calistoga';
+    src: url('./fonts/Calistoga/Calistoga-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url('./fonts/Caveat/static/Caveat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caveat';
+    src: url('./fonts/Caveat/static/Caveat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Momo Trust Sans';
+    src: url('./fonts/Momo_Trust_Sans/static/MomoTrustSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Momo Trust Sans', sans-serif;
+    background-color: #FAF9F6;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* ============== STICKY NAVIGATION BAR ============== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: rgba(250, 249, 246, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease-in-out;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+nav.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav .logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+nav .links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    border: 1px solid #999;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    color: #0066cc;
+    border-color: #0066cc;
+}
+
+/* ============== INTRO SECTION ============== */
+.intro {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+    padding-top: 250px; /* To account for the fixed nav bar */
+    background: linear-gradient(135deg, #FAF9F6 0%, #FAF9F6 100%);
+}
+
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 140px;
+    max-width: 900px;
+}
+
+.intro-text-wrapper {
+    position: relative;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.intro-greeting {
+    font-family: 'Caveat', serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #555;
+    align-self: flex-start;
+    margin-left: 0;
+}
+
+.intro-main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.intro-main p {
+    font-family: 'Calistoga', sans-serif;
+    font-size: 48px;
+    color: #222;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.intro-subtitle {
+    font-family: 'Caveat', serif;
+    font-size: 30px;
+    color: #555;
+    font-weight: 600;
+    align-self: flex-end;
+    margin-right: 0;
+    max-width: 400px;
+    text-align: left;
+}
+
+.intro-illustration {
+    display: flex;
+    align-items: flex-start;
+    width: 50%;
+    transform: translateY(-200px);
+}
+
+.intro-illustration img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    transform: translateX(-200px);
+}
+
+/* ============== MY WORKS SECTION ============== */
+.my-works {
+    min-height: 100vh;
+    padding: 0px 60px;
+    background-color: #FAF9F6;
+}
+
+.section-title {
+    font-family: 'Calistoga', serif;
+    font-size: 42px;
+    margin-bottom: 60px;
+    color: #222;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 60px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    cursor: pointer;
+    align-items: stretch;
+}
+
+.project-card .image-container {
+    position: relative;
+    flex: 1;
+    min-height: 300px;
+    background-color: #e8e8e8;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 5px 20px rgba(34, 34, 34, 0.2);
+}
+
+.project-card .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+
+.project-card .image-container img.hidden {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.project-card .project-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+}
+
+.project-card[data-project ="frph"] .project-text, 
+.project-card[data-project="moderna"] .project-text {
+    padding-left: 100px;
+}
+
+.project-card .title {
+    font-family: 'Calistoga', serif;
+    font-size: 30px;
+    font-weight: bold;
+    width: 80%;
+    color: #222;
+}
+
+.project-card .year {
+    font-family: 'Momo Trust Sans', sans-serif;
+    font-size: 24px;
+    color: #999;
+}
+
+/* Directional skew effects for project cards */
+.project-card[data-project="sga"] .image-container:hover,
+.project-card[data-project="aguaholic"] .image-container:hover {
+    transform: skewY(-3deg);
+}
+
+.project-card[data-project="frph"] .image-container:hover,
+.project-card[data-project="moderna"] .image-container:hover {
+    transform: skewY(3deg);
+}
+
+/* ============== HOW I THINK SECTION ============== */
+.how-i-think {
+    min-height: 100vh;
+    padding: 100px 60px;
+    background-color: #FAF9F6;
+    display: flex;
+    gap: 100px;
+    align-items: flex-start;
+}
+
+.how-i-think .content {
+    flex: 1;
+}
+
+.how-i-think .content h2 {
+    font-family: 'Calistoga', serif;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.how-i-think .description {
+    grid-column: 1 / 2;
+    font-family: 'Caveat', serif;
+    font-size: 20px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    width: 10%;
+}
+.how-i-think .description#start-description {
+    transform: translateY(200px);
+    grid-column: 2 / 2;
+    align-self: start;
+}
+
+.how-i-think .description#end-description {
+    transform: translateY(20px);
+    grid-column: 3 / 4;
+    align-self: end;
+    transform: translateX(-50px);
+}
+
+.how-i-think .content p strong {
+    font-family: 'Calistoga', serif;
+    font-size: 40px;
+    padding-right: 5px;
+    color: #222;
+}
+
+.how-i-think .content p {
+    font-family: 'Momo Trust Sans', sans-serif;
+    font-size: 20px;
+    color: #555;
+    line-height: 1.8;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+.how-i-think .diagrams {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.diagram-item {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.step-divider {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: left;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.diagram-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 200px;
+}
+
+/* ============== FIND ME SECTION ============== */
+.find-me {
+    min-height: 100vh;
+    padding: 100px 60px;
+    background: linear-gradient(135deg, #FAF9F6 0%, #FAF9F6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.find-me .profile {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile-pic-wrapper {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.find-me .profile img {
+    width: 400px;
+    height: 500px;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1);
+}
+
+.easter-pic, .default-pic {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.easter-pic {
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.find-me .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.find-me .info h2 {
+    font-family: 'Calistoga', serif;
+    font-size: 42px;
+    font-weight: bold;
+    color: #222;
+}
+
+.find-me .info .contact {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    gap: 50px;
+}
+
+.find-me .info .contact-item {
+    font-family: 'Momo Trust Sans', sans-serif;
+    font-size: 18px;
+    color: #757575;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 24px;
+}
+
+.find-me .info .contact-item a {
+    color: #757575;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.find-me .info .contact-item a:hover {
+    color: #5a5a5a;
+    text-decoration: underline;
+}
+
+.find-me .info .contact-item .icon {
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============== UTILITIES ============== */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    opacity: 0.5;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
