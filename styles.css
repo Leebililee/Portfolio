@@ -105,8 +105,7 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 0px;
-    padding-top: 250px; /* To account for the fixed nav bar */
+    padding: 250px 0px 50px 0px;
     background: linear-gradient(135deg, #FAF9F6 0%, #FAF9F6 100%);
 }
 
@@ -133,14 +132,12 @@ nav a:hover {
     font-weight: bold;
     color: #555;
     align-self: flex-start;
-    margin-left: 0;
 }
 
 .intro-main {
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 0;
 }
 
 .intro-main p {
@@ -157,7 +154,6 @@ nav a:hover {
     color: #555;
     font-weight: 600;
     align-self: flex-end;
-    margin-right: 0;
     max-width: 400px;
     text-align: left;
 }
@@ -241,7 +237,7 @@ nav a:hover {
     gap: 10px;
 }
 
-.project-card[data-project ="frph"] .project-text, 
+.project-card[data-project="frph"] .project-text, 
 .project-card[data-project="moderna"] .project-text {
     padding-left: 100px;
 }
@@ -427,12 +423,11 @@ nav a:hover {
 
 .find-me .info .contact-item {
     font-family: 'Momo Trust Sans', sans-serif;
-    font-size: 18px;
+    font-size: 24px;
     color: #757575;
     display: flex;
     align-items: center;
     gap: 20px;
-    font-size: 24px;
 }
 
 .find-me .info .contact-item a {
@@ -471,5 +466,410 @@ nav a:hover {
     }
     50% {
         transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* ============== TABLET BREAKPOINT (481px - 1024px) ============== */
+@media (max-width: 1024px) {
+    /* Navigation */
+    nav {
+        padding: 0 40px;
+        height: 70px;
+    }
+
+    nav .links {
+        gap: 30px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    /* Intro Section */
+    .intro {
+        padding: 150px 0px 30px 0px;
+        min-height: 80vh;
+    }
+
+    .intro-container {
+        gap: 80px;
+        max-width: 100%;
+        padding: 0 40px;
+    }
+
+    .intro-text-wrapper {
+        width: 100%;
+        gap: 20px;
+    }
+
+    .intro-greeting {
+        font-size: 24px;
+    }
+
+    .intro-main p {
+        font-size: 36px;
+    }
+
+    .intro-subtitle {
+        font-size: 22px;
+        max-width: 100%;
+    }
+
+    .intro-illustration {
+        width: 100%;
+        transform: translateY(0);
+    }
+
+    .intro-illustration img {
+        max-height: 300px;
+        transform: translateX(0);
+    }
+
+    /* My Works Section */
+    .my-works {
+        padding: 50px 40px;
+    }
+
+    .section-title {
+        font-size: 36px;
+        margin-bottom: 50px;
+    }
+
+    .projects-grid {
+        gap: 50px;
+    }
+
+    .project-card {
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .project-card .image-container {
+        min-height: 250px;
+        width: 100%;
+        flex: none;
+    }
+
+    .project-card .project-text {
+        width: 100%;
+        flex: none;
+    }
+
+    .project-card[data-project="frph"] .project-text,
+    .project-card[data-project="moderna"] .project-text {
+        padding-left: 0;
+    }
+
+    .project-card[data-project="frph"],
+    .project-card[data-project="moderna"] {
+        flex-direction: column-reverse;
+    }
+
+    .project-card .title {
+        font-size: 24px;
+        width: 100%;
+    }
+
+    .project-card .year {
+        font-size: 18px;
+    }
+
+    /* Remove skew effects on tablet, use simple hover */
+    .project-card[data-project="sga"] .image-container:hover,
+    .project-card[data-project="aguaholic"] .image-container:hover,
+    .project-card[data-project="frph"] .image-container:hover,
+    .project-card[data-project="moderna"] .image-container:hover {
+        transform: scale(1.02);
+    }
+
+    /* How I Think Section */
+    .how-i-think {
+        flex-direction: column;
+        padding: 50px 40px;
+        gap: 50px;
+        align-items: stretch;
+    }
+
+    .how-i-think .content h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .how-i-think .description {
+        width: 100%;
+        font-size: 16px;
+        grid-column: auto;
+        align-self: auto;
+    }
+
+    .how-i-think .description#start-description {
+        transform: translateY(0);
+        grid-column: auto;
+    }
+
+    .how-i-think .description#end-description {
+        transform: translateY(0);
+        grid-column: auto;
+    }
+
+    .how-i-think .content p {
+        font-size: 16px;
+        padding-left: 30px;
+        margin-bottom: 15px;
+    }
+
+    .how-i-think .content p strong {
+        font-size: 32px;
+    }
+
+    .step-divider {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .diagram-item img {
+        max-height: 150px;
+    }
+
+    /* Find Me Section */
+    .find-me {
+        flex-direction: column;
+        padding: 50px 40px;
+        gap: 50px;
+        justify-content: flex-start;
+        min-height: auto;
+    }
+
+    .find-me .profile {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .profile-pic-wrapper {
+        width: 300px;
+        height: 375px;
+    }
+
+    .find-me .profile img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .find-me .info {
+        width: 100%;
+        gap: 40px;
+    }
+
+    .find-me .info h2 {
+        font-size: 32px;
+    }
+
+    .find-me .info .contact {
+        padding-left: 30px;
+        gap: 40px;
+    }
+
+    .find-me .info .contact-item {
+        font-size: 18px;
+        gap: 15px;
+    }
+}
+
+/* ============== MOBILE BREAKPOINT (320px - 480px) ============== */
+@media (max-width: 480px) {
+    /* Navigation */
+    nav {
+        padding: 0 20px;
+        height: 60px;
+    }
+
+    nav .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    nav .links {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 11px;
+        padding: 5px 10px;
+        border-radius: 15px;
+    }
+
+    /* Intro Section */
+    .intro {
+        padding: 100px 0px 20px 0px;
+        min-height: auto;
+        height: auto;
+    }
+
+    .intro-container {
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .intro-text-wrapper {
+        width: 100%;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .intro-greeting {
+        font-size: 20px;
+        align-self: center;
+    }
+
+    .intro-main p {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .intro-subtitle {
+        font-size: 18px;
+        align-self: center;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .intro-illustration {
+        width: 100%;
+    }
+
+    .intro-illustration img {
+        max-height: 250px;
+    }
+
+    /* My Works Section */
+    .my-works {
+        padding: 30px 20px;
+        min-height: auto;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .projects-grid {
+        gap: 30px;
+    }
+
+    .project-card {
+        gap: 20px;
+    }
+
+    .project-card .image-container {
+        min-height: 200px;
+    }
+
+    .project-card .title {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .project-card .year {
+        font-size: 14px;
+    }
+
+    .project-card[data-project="frph"],
+    .project-card[data-project="moderna"] {
+        flex-direction: column-reverse;
+    }
+
+    /* How I Think Section */
+    .how-i-think {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .how-i-think .content h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .how-i-think .description {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .how-i-think .content p {
+        font-size: 14px;
+        padding-left: 20px;
+        margin-bottom: 12px;
+    }
+
+    .how-i-think .content p strong {
+        font-size: 24px;
+    }
+
+    .step-divider {
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .diagram-item {
+        gap: 5px;
+    }
+
+    .diagram-item img {
+        max-height: 120px;
+    }
+
+    /* Find Me Section */
+    .find-me {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .find-me .profile {
+        gap: 15px;
+    }
+
+    .profile-pic-wrapper {
+        width: 100%;
+        max-width: 280px;
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .find-me .profile img {
+        width: 100%;
+        height: auto;
+        box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .find-me .info {
+        gap: 30px;
+    }
+
+    .find-me .info h2 {
+        font-size: 24px;
+    }
+
+    .find-me .info .contact {
+        padding-left: 0;
+        gap: 30px;
+    }
+
+    .find-me .info .contact-item {
+        font-size: 16px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .find-me .info .contact-item .icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+        bottom: 20px;
     }
 }
